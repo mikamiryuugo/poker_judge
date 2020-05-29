@@ -1,5 +1,11 @@
 class Poker < ApplicationRecord
-  # include ActiveModel::Model
+  validates :card_in_hand, presence: true
+  validate :check_cards_count
 
-  validates:  presence: true
+
+  def check_format
+    # 正規表現
+    # cards.~~~
+  end
+
 end
