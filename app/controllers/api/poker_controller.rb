@@ -11,14 +11,10 @@ class Api::PokerController < ApplicationController
 
   end
 
-
 private
 
   def poker_params
     params.require(:poker).permit(:card_in_hand)
   end
-
-
-
 
 end

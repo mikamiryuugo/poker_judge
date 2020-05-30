@@ -1,6 +1,6 @@
 class Poker < ApplicationRecord
   validates :card_in_hand, presence: true
-  validates :card_in_hand, format: { with: /\A[a-zA-Z0-9]{11}\z\s/ }
+  validates :card_in_hand, format: { with: /\A[\s!-~]+\z/, message: "フォーマットが正しくありません。" }
     # 半角英数字（大文字含む11文字）
     # REG_HANKAKU_EISU_11_CHAR_CAPITAL = Regexp.new(/\A[a-zA-Z0-9]{11}\z/)
 
