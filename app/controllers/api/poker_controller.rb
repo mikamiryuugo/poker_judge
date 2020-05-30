@@ -5,10 +5,9 @@ class Api::PokerController < ApplicationController
 
     render json: cards.errors.full_messages and return unless cards.valid?
 
-    # cards.one_pair
-    render json: cards
+    cards.judgementtime
 
-    # なんの答えかをだすロジック作るのみかな。
+    render json: cards
 
   end
 
