@@ -5,7 +5,7 @@ class Poker < ApplicationRecord
     # REG_HANKAKU_EISU_11_CHAR_CAPITAL = Regexp.new(/\A[a-zA-Z0-9]{11}\z/)
 
 
-  def judgementtime
+  def judgement_time
   # この中にポーカーの役をまとめる
     one_pair
     two_pair
