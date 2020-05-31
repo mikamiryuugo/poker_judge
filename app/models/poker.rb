@@ -82,4 +82,13 @@ class Poker < ApplicationRecord
     cards.sort == [1,10,11,12,13]
   end
 
+
+  def correct_card?
+    cards = self.card_in_hand.split
+    cards.each.with_index(1) do |card, i|
+      errors[:base] << "#{i}番目のカード指定文字が不正です。（#{card})"  if card.match(/\A[SHCD]([1][0-3]|[1-9])$/).nil?
+      #error_messages => {5=>"5番目のカード指定文字が不正です。（H15)"}
+    end
+  end
+
 end

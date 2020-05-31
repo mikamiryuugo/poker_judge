@@ -9,6 +9,10 @@ class Api::PokerController < ApplicationController
 
     render json: cards.errors.full_messages and return unless cards.valid?
 
+    cards.correct_card?
+
+    render json: cards.errors.messages[:base] and return if cards.errors.messages[:base].present?
+
     cards.judgement_time
 
     render json: cards
