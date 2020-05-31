@@ -2,9 +2,3 @@
   <%= f.text_field :card_in_hand, placeholder: "C10 S11 D12 H13 S1" %>
   <%= submit_tag "submit", class: "text-white bg-success" %>
 <% end %>
-
-<% flash.each do |key, value| %>
-  <p class="alert alert-<%= key %>">
-    <%= value %>
-  </p>
-<% end %>
