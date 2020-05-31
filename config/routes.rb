@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     post "judge", to: "poker#judge"
   end
 
+  root "api/poker#index"
+
 end
