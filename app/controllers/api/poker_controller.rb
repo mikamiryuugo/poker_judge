@@ -1,6 +1,10 @@
 class Api::PokerController < ApplicationController
-  def judge
 
+  def index
+    @poker = Poker.new
+  end
+
+  def judge
     cards = Poker.new(poker_params)
 
     render json: cards.errors.full_messages and return unless cards.valid?
@@ -8,7 +12,6 @@ class Api::PokerController < ApplicationController
     cards.judgement_time
 
     render json: cards
-
   end
 
 private
